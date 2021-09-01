@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Build
       shell: cmd
-      run: .\build.bat
+      run: \build.bat
     - name: Upload to release
       uses: JasonEtco/upload-to-release@master
       with:
