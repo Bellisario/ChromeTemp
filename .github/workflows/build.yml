@@ -17,7 +17,7 @@ jobs:
         run: build.bat
 
       - name: Upload and release
-        uses: fnkr/github-action-ghr@latest
+        uses: fnkr/github-action-ghr@v1.3
         env:
           GHR_PATH: chrome-temp.zip
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
