@@ -20,7 +20,6 @@ echo OK.
 echo.
 echo Build complete!
 
-timeout /t 3 /nobreak>nul
 goto :end
 
 :error
@@ -29,6 +28,6 @@ echo.
 echo.
 echo.
 echo Error while building.
-timeout /t 3 /nobreak>nul
 exit /B 1
+
 :end
