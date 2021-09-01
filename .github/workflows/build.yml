@@ -19,6 +19,8 @@ jobs:
       - name: Upload Binaries to Release
         uses: svenstaro/upload-release-action@v2
         with:
+          file: chrome-temp.zip
+          repo_name: ChromeTemp
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
-          body: "To use ChromeTemp, download chrome-temp.zip, unpack where you want and run RUNME.bat"
+          body: To use ChromeTemp, download chrome-temp.zip, unpack where you want and run RUNME.bat
