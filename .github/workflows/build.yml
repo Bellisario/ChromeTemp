@@ -1,8 +1,16 @@
 name: Build
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version name to release'
+        default: 'v1.0.0'
+        required: true
+      releaseContent:
+        description: 'Content of the release (ex. changelog, how-to run)'
+        default: 'To use ChromeTemp, download chrome-temp.zip, unpack where you want and run RUNME.bat'
+        required: true
 
 jobs:
   Build:
@@ -20,7 +28,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           file: chrome-temp.zip
-          repo_name: Bellisario/ChromeTemp
+          release_name: 'ChromeTemp ${{ github.event.inputs.version }}'
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref }}
-          body: To use ChromeTemp, download chrome-temp.zip, unpack where you want and run RUNME.bat
+          tag: ${{ github.event.inputs.version }}
+          body: ${{ github.event.inputs.releaseContent }}
