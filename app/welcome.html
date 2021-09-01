@@ -1,0 +1,126 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ChromeTemp is loading...</title>
+	<link rel="icon" href="./icons/chrome-temp.ico" type="image/x-icon"/>
+<style>
+body, img {
+	transition: opacity 0.5s ease;
+	opacity: 1;
+}
+#loader, #advanced {
+	transition: opacity 0.5s ease;
+}
+* [hide] {
+	opacity: 0;
+}
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+}
+.loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+</style>
+</head>
+<body>
+	<center><img id="image" height="250px" src="./icons/chrome-temp.png" alt="Chrome-Temp" hide></center>
+	<br>
+	<div id="loader" class="loader" hide>
+    <svg class="circular" viewBox="25 25 50 50">
+		<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+    </svg>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="advanced" hide>
+		<center style="font-family:sans-serif;font-size:large;">Advanced mode</center>
+	</div>
+</body>
+<script>
+	var image = document.getElementById('image');
+	var loader = document.getElementById('loader');
+	var advanced = document.getElementById('advanced');
+	setTimeout(function(){loader.removeAttribute('hide')}, 200);
+	setTimeout(function(){image.removeAttribute('hide')}, 750);
+	function getParameterByName(name, url = window.location.href) {
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	};
+	if (getParameterByName('url'))
+		setTimeout(function(){window.location.replace(getParameterByName('url'))}, 3750);
+		
+	if (getParameterByName('advanced'))
+		setTimeout(function(){advanced.removeAttribute('hide')}, 400);
+		
+	window.addEventListener('beforeunload',function (e) {
+		document.body.setAttribute('hide', '');
+	});
+</script>
+</html>

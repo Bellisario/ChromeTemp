@@ -1,0 +1,1 @@
+This is a temp folder that is used by Chrome-Temp: don't touch it!

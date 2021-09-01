@@ -1,0 +1,39 @@
+{
+    "name": "ChromeTemp DDG Manager",
+    "description": "Disable this extension if you don't want to use DuckDuckGo as default search engine.",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_title": "ChromeTemp DuckDuckGo Manager"
+    },
+    "manifest_version": 2,
+    "icons": {
+        "128": "chrome-temp.png"
+    },
+    "chrome_settings_overrides": {
+        "search_provider": {
+            "encoding": "UTF-8",
+            "favicon_url": "https://duckduckgo.com/favicon.ico",
+            "is_default": true,
+            "keyword": "duckduckgo.com",
+            "name": "DuckDuckGo",
+            "prepopulated_id": 92,
+            "search_url": "https://duckduckgo.com/?q={searchTerms}",
+            "suggest_url": "https://duckduckgo.com/ac/?q={searchTerms}&type=list"
+        }
+    },
+    "content_scripts": [{
+            "matches": ["*://start.duckduckgo.com/"],
+            "run_at": "document_end",
+            "js": ["injection.js"]
+        }]
+}
