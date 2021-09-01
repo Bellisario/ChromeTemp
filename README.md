@@ -1,9 +1,13 @@
 # ChromeTemp
 A Temp Chrome for Windows. Not only a Chrome profile, but a new fresh Chrome for what you want. For example:
-> temp things, extensions test and even Chrome flags (but make sure to use Advanced mode)!
+> temp things, extensions test and even Chrome flags (but, with flags, make sure to use [Advanced mode](#advanced-mode))!
 
 ## Download
 [Download the latest version](https://github.com/Bellisario/ChromeTemp/releases/latest/) (called `chrome-temp.zip`) and unpack it where you want. Then run `RUNME.bat` and follow instructions.
+### Advanced mode
+If you need more freedom, you can choose advanced mode:
+- disables all extensions (DDG default search engine and ChromeTemp Core Extension).
+- allows browser restart (the user chooses when the session ends even after browser close): this makes possible use Chrome flags and update your Chrome also from ChromeTemp.
 ### Known issues
 <details open>
 <summary>Every time you run ChromeTemp, you need to allow run twice.</summary>
