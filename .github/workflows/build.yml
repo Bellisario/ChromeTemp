@@ -6,14 +6,19 @@ on:
 
 jobs:
   Build:
+    name: Build and Upload
     runs-on: windows-latest
     steps:
-    - name: Build
-      shell: cmd
-      run: .\build.bat
-    - name: Upload to release
-      uses: JasonEtco/upload-to-release@master
-      with:
-        args: chrome-temp.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull source
+        uses: actions/checkout@v1
+
+      - name: Build
+        shell: cmd
+        run: buld.bat
+
+      - name: Upload to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: chrome-temp.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
