@@ -8,6 +8,7 @@ set welcome="file:///%cd%/welcome.html?url=%urlToLoad%"
 set welcomeAdvanced="file:///%cd%/welcome.html?url=%urlToLoad%&advanced=true"
 set extensionManager="%cd%/extensions/manager/"
 set extensionDDG="%cd%/extensions/duckduckgo/"
+set extensionUpdater="%cd%/extensions/update-checker/"
 cd ..\temps
 set temp="%cd%"
 set folder="%cd%\chromeTemp-%random%"
