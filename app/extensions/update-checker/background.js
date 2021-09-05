@@ -6,13 +6,13 @@ var debug = false;
 (async function () {
     var version = await fetch(browser.runtime.getURL('version.txt'));
     version = await version.text();
-    if (version === 'default' && debug === false)
+    if (version.includes('default') && debug === false)
         return console.log('Not checking for updates:\nChromeTemp is running from source (dev mode).');
     console.log('Checking for updates...');
     var latest = await fetch('https://github.com/Bellisario/ChromeTemp/releases/latest');
     latest = latest.url.replace('https://github.com/Bellisario/ChromeTemp/releases/tag/', '');
     console.log('Current version:', version, '\nLatest version:', latest);
-    if (version !== latest) {
+    if (!version.includes(latest)) {
 		console.log('Update available.');
 		await new Promise(r => setTimeout(r, 10000));
 		notification = browser.notifications.create('chrome-temp.updater', {
