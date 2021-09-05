@@ -1,0 +1,22 @@
+{
+    "name": "ChromeTemp Updater",
+    "description": "This is the update checker of ChromeTemp.",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "webRequest",
+		"notifications",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_title": ""
+    },
+    "manifest_version": 2,
+    "icons": {
+        "128": "chrome-temp.png"
+    }
+}
