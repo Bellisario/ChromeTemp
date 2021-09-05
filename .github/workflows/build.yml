@@ -22,7 +22,7 @@ jobs:
 
       - name: Build
         shell: cmd
-        run: build.bat
+        run: build.bat ${{ github.event.inputs.version }}
 
       - name: Upload Binaries to Release
         uses: svenstaro/upload-release-action@v2

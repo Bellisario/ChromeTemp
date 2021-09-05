@@ -8,6 +8,7 @@ set welcome="file:///%cd%/welcome.html?url=%urlToLoad%"
 set welcomeAdvanced="file:///%cd%/welcome.html?url=%urlToLoad%&advanced=true"
 set extensionManager="%cd%/extensions/manager/"
 set extensionDDG="%cd%/extensions/duckduckgo/"
+set extensionUpdater="%cd%/extensions/update-checker/"
 cd ..\temps
 set temp="%cd%"
 set folder="%cd%\chromeTemp-%random%"
@@ -27,7 +28,7 @@ if defined Command goto :startChrome
 
 :startChrome
 if %advanced% == 1 goto :startChromeAdvanced
-start "" "chrome" --start-maximized --user-data-dir=%folder% %welcome% --load-extension=%extensionManager%,%extensionDDG%
+start "" /WAIT "chrome" --start-maximized --no-default-browser-check --no-first-run --user-data-dir=%folder% %welcome% --load-extension=%extensionManager%,%extensionUpdater%,%extensionDDG%
 echo ChromeTemp started: waiting for close.
 goto :endStartChrome
 :startChromeAdvanced
