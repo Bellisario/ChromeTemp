@@ -19,7 +19,7 @@ To resolve, just disable the flag "Always ask before opening this file" (transla
 ## Contribute
 Feel free to [contribute](https://github.com/Bellisario/ChromeTemp/pulls) (future goals are preferred, but don't worry to make other), create [an issue](https://github.com/Bellisario/ChromeTemp/issues) or [a new discussion](https://github.com/Bellisario/ChromeTemp/discussions).
 ### Future Goals
-- ~~Check for updates (with _chrome extension_).~~ (Made)
+- ~~Check for updates (with _chrome extension_).~~ ([Made](https://github.com/Bellisario/ChromeTemp/pull/1))
 - Prevent user ask to run every time for two times (Currently I don't know how to do. **Help me!!!**).
 - Compile batch files (with _bat2exe_).
 - Improve graphics for batch and html both.
