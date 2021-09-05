@@ -4,6 +4,8 @@ A Temp Chrome for Windows. Not only a Chrome profile, but a new fresh Chrome for
 
 ## Download
 [Download the latest version](https://github.com/Bellisario/ChromeTemp/releases/latest/) (called `chrome-temp.zip`) and unpack it where you want. Then run `RUNME.bat` and follow instructions.
+### Pay Attention
+After file download, make sure to unblock internet download lock: right click on the file, then _Properties_. Now click on _Unblock_ in _Security_ section and click _Ok_ (all this could be a little different in your language).
 ### Advanced mode
 If you need more freedom, you can choose advanced mode:
 - disables all extensions (DDG default search engine and ChromeTemp Core Extension).
