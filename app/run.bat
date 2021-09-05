@@ -27,7 +27,7 @@ if defined Command goto :startChrome
 
 :startChrome
 if %advanced% == 1 goto :startChromeAdvanced
-start "" "chrome" --start-maximized --user-data-dir=%folder% %welcome% --load-extension=%extensionManager%,%extensionDDG%
+start "" /WAIT "chrome" --start-maximized --no-default-browser-check --no-first-run --user-data-dir=%folder% %welcome% --load-extension=%extensionManager%,%extensionUpdater%,%extensionDDG%
 echo ChromeTemp started: waiting for close.
 goto :endStartChrome
 :startChromeAdvanced
